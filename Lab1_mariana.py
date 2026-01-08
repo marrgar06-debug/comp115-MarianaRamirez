@@ -3,7 +3,7 @@ Lab 1 - First Impression of Python
 (100 marks in total, including
 4 exercises + submission (10 marks))
 
-Your Name 😍:
+Your Name 😍: Mariana Ramirez Garcia
 Lab Due: 5:00pm on Jan. 09, 2026
 
 Objective (By the end of this lab, you will be able to):
