@@ -28,7 +28,7 @@ print(f"Exercise 1: new_num stores the value of {new_num}.")
 dividend = 10
 divisor = 3
 
-division_result = dividend / divisor
+division_result = dividend // divisor
 
 quotient = dividend // divisor     # The quotient should be 3
 remainder = dividend % divisor    # The remainder should be 1
@@ -99,7 +99,7 @@ print("The area of a circle with radius 2 is :", circle_area )
 print("\nExercise 5")
 
 
-day_today = int(input("What day is today? (0 = Mon , 6 = Sunday):"))
+day_today = int(input("What day is today?(0 = Mon and 6 = Sunday):"))
 days_trip = int(input("How long is the trip?:")) 
 day_return = (day_today + days_trip) % 7
 
