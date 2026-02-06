@@ -5,47 +5,8 @@ Lab 5 - Functions and Lists
 Author:  <Mariana Ramirez>
 Due Date: This Friday (Feb. 6) 5pm.
 
-Objective:
-1. Practice coding simple Python functions and writing unit tests testing functions by assert
-2. Practice how to operate on lists
-3. Practice with iterations using loop
-4. Practice using the accumulator algorithm pattern (Initialize-Loop-Return):
-   Initialize a variable that is assigned to an integer, a list, etc. 
-   Loop (for or while) to update the variable based on requirements; 
-   Return the variable or a value related to this variable.
 """
-
-"""
-Example 1: 
-
-To implement a function for calculating the perimeter of a rectangle,
-we know this function should have two parameters as inputs: length and width
-of a rectangle.
-We should also know this function should return a value of the perimeter.
-Before or after our function implementation, we know that our function, let's say,
-function's name is rectangle_perimeter, shoud pass the unit tests such as:
-assert rectangle_perimeter(5, 6) == 22
-assert rectangle_perimeter(1.25, 2.43) == 7.36
-assert rectangle_perimeter(1.001, 2.005) == 6.01
-"""
-
-def rectangle_perimeter(length, width):
-    perimeter = (length + width) * 2
-    return round(perimeter, 2) # Round to the result to two decimal places
-
-
-assert rectangle_perimeter(5, 6) == 22
-assert rectangle_perimeter(1.25, 2.43) == 7.36
-assert rectangle_perimeter(1.001, 2.005) == 6.01
-
-
-
-
-"""
-Exercise 1 (10 marks)
-
-"""
-
+#Exercise 1 (10 marks)
 
 def convert_american_dollars(american_dollars):
     canadian_dollars = american_dollars * 1.34
@@ -57,10 +18,9 @@ assert convert_american_dollars(100) == 134
 assert convert_american_dollars(100.05) == 134.07
 
 
-"""
+'''
 Exercise 2 (10 marks)
-
-"""
+'''
 
 days_week = [
     "Monday", "Tuesday", "Wednesday",
@@ -75,36 +35,15 @@ assert back_day_from_trip(3, 5) == "Tuesday"
 assert back_day_from_trip(1, 2) == "Thursday"
 assert back_day_from_trip(1, 7) == "Tuesday"
 
-
-
-
-
-"""
-Example 2 - To implement our own sum function that takes a list of numbers
-as a parameter and returns the sum of the numbers.
-"""
-def my_sum(nums):
-    total = 0
-    for num in nums:
-        total += num
-    return total
-
-assert my_sum([1, 4, 5]) == 10
-assert my_sum([9, 5]) == 14
-
-
-"""
+'''
 Exercise 3 (10 marks) - From interactive textbook 10.31.4
+'''
 
-"""
-
-# Function implementation (10 marks)
 def average(nums):
     total = 0
     for num in nums:
         total += num
     return round (total/ len(nums), 2)
-
 
 
 assert average([1, 2, 3]) == 2
@@ -152,19 +91,6 @@ assert add_number([7, 8], -5) == [2, 3]
 """
 Exercise 6 (20 marks) 
 
-Write a function called squares() that takes a list of numbers nums as its parameter 
-and returns a list of nums' squares.
-
-For example,
-squres([1, 2, 3, 4]) will return [1, 4, 9, 16]
-squares([2, 4, 6, 7, 8]) will return [4, 16, 36, 49, 64]
-
-Hint:
-Create a variable assigned to an empty list [], 
-and use the append() to add the required elements to the list.
-
-Uncomment the unit tests below to verify your function implementation.
-
 """
 
 # Function implementation
@@ -184,26 +110,12 @@ assert squares([]) == []
 """
 Exercise 7 (20 marks) 
 
-Write a function called repeat_elements() that takes a list of numbers nums as its parameter 
-and returns a list of repeating each element twice.
-
-For example,
-repeat_elements([1, 2, 3, 4]) will return [1, 1, 2, 2, 3, 3, 4, 4]
-repeat_elements([2, 7, 8]) will return [2, 2, 7, 7, 8, 8]
-
-Hint:
-Create a variable assigned to an empty list [], 
-and use the append() to add the required elements to the list.
-
-
-Uncomment the unit tests below to verify your function implementation.
 """
 
 # Function implementation 
 def repeat_elements(nums):
     total = []
     for num in nums: 
-        total.append(num)
         total.append(num)
         total.append(num)
     return total
