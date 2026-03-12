@@ -1,0 +1,131 @@
+
+Exercise 1 (20 marks: doctring: 5 marks, function implementation: 10 marks, unit tests: 5 marks)
+
+def remove_duplicates_set(s):
+    """
+    This function removes the duplicates from the string s using a set.
+    E.g.,
+    >>> remove_duplicates("Apple")
+    "Aple"
+    
+    """
+    seen_set = set()
+    res = ""
+    for c in s:
+        if c not in seen_set:
+            res += c
+            seen_set.add(c)
+    return res
+
+assert remove_duplicates_set("apple") == "aple"
+assert remove_duplicates_set("strawberry") == "strawbey"
+
+
+Exercise 2 (20 marks - doctring: 5 marks, function implementation: 10 marks, unit tests: 5 marks)
+
+def gem_counting(stones, gems):
+    """
+    This function counts how many characters in "stones" are also present in the "gems" string
+    E.g.,
+    >>> gem_counting("abDFMdm", "admMQq")
+    4
+    Parameters: 
+    - stones (str): A string representing the types of stones collected.
+    - gems (str): A string representing the types of stones that are gems 
+    
+    Returns: 
+    The total count of stones that are also gems as an integer 
+    """
+    gem_set = set(gems)
+    gem_count = 0
+    for stone in stones:
+        if stone in gem_set:
+            gem_count += 1
+            
+    return gem_count
+
+assert gem_counting("abDFMdm", "admMQq") == 4
+assert gem_counting("abDFMdm", "af") == 1
+assert gem_counting("awCcM", "cQqW") == 1
+assert gem_counting("bFfL", "cQqW") == 0
+
+"""
+Exercise 3 (20 marks: doctring: 5 marks, function implementation: 10 marks, unit tests: 5 marks)
+
+def students_id(ids):
+    """
+    This function counts the unique students IDs of students who use the shuttle service.
+    E.g.,
+    >>> students_id(['002', '003', '001', '004', '012'])
+    5
+
+    Parameters: 
+    - IDs (list): A list of strings that represent student IDs
+    
+    Returns: 
+    The total count of unique student IDs 
+
+    """
+    unique_student_ID = set(ids)
+    return len (unique_student_ID)
+    
+assert students_id(['002', '003', '001', '004', '012']) == 5
+assert students_id(['002', '003', '001', '012', '003', '001']) == 4
+
+
+
+
+"""
+Exercise 4 (20 marks - doctring: 5 marks, function implementation: 10 marks, unit tests: 5 marks)
+
+def students_id_occurrences(ids):
+    """
+    This function counts the occurrences of each student ID in a list.
+    E.g.,
+    >>> students_id(['002', '003', '001', '004', '012'])
+    {'002': 1, '003': 1, '001': 1, '004': 1, '012': 1}}
+
+    Parameters: 
+    - IDs (list): A list of strings that represent student IDs
+    
+    Returns: 
+    - dictionary: A dictonary matching each unique ID to its count
+
+    """
+    id_dictionary = {}
+    for student_id in ids:
+        if student_id in id_dictionary:
+            id_dictionary[student_id] += 1
+        else: 
+            id_dictionary[student_id] = 1 
+
+    return id_dictionary
+
+
+assert students_id_occurrences (['002', '003', '001', '004', '012']) == {'002': 1, '003': 1, '001': 1, '004': 1, '012': 1}
+assert students_id_occurrences(['002', '003', '001', '012', '003', '001']) == {'002': 1, '003': 2, '001': 2, '012': 1}
+
+
+
+"""
+Exercise 5 (20 marks - doctring: 5 marks, function implementation: 10 marks, unit tests: 5 marks)
+
+import re
+
+def word_frequency(paragraph):
+    """
+    Write your docstring
+    """
+    words = re.findall(r'\b\w+\b', paragraph)
+    freq_dict = {}
+
+    for word in words:
+        if word in freq_dict:
+            freq_dict[word] += 1
+        else:
+            freq_dict[word] = 1
+            
+    return freq_dict
+
+assert word_frequency("I am alive. I am happy.") == {'I': 2, 'am': 2, 'alive': 1, 'happy': 1}
+assert word_frequency("I do not like water. I like fruits.") == {'I': 2, 'do': 1, 'not': 1, 'like': 2, 'water': 1, 'fruits': 1}
